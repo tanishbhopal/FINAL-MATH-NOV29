@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Game Report Card</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="report-container">
+        <h1>Report Card</h1>
+        <button class="back-button" onclick="window.location.href='mathgame.html'">Back to Game</button>
+        
+        <div class="report-card">
+            <div class="report-stat">
+                <h3>Accuracy</h3>
+                <p id="report-accuracy">0%</p>
+            </div>
+            <div class="report-stat">
+                <h3>Questions Attempted</h3>
+                <p id="questions-solved">0</p>
+            </div>
+            <div class="report-stat">
+                <h3>Average Time/Question</h3>
+                <p id="avg-time">0s</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Load stats from localStorage when report page loads
+        window.onload = function() {
+            document.getElementById('report-accuracy').textContent = localStorage.getItem('accuracy') || '0%';
+            document.getElementById('questions-solved').textContent = localStorage.getItem('questionsSolved') || '0';
+            document.getElementById('avg-time').textContent = localStorage.getItem('avgTime') || '0s';
+        }
+    </script>
+</body>
+</html>
